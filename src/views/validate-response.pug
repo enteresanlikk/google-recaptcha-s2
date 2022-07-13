@@ -1,0 +1,13 @@
+extends ./layouts/default
+
+block body
+    .container 
+        .validate-response(class=response.success ? 'success' : 'error')
+            h1 Response
+            if response.success
+                h2.title Success!
+            else
+                h2.title Error!
+                ul.error-list.list-unstyled
+                    each value in response['error-codes']
+                        li.error-item= value

@@ -1,0 +1,101 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary: #0099ff;
+    --btn-bg: #eee;
+    --success: #0fb100;
+    --danger: #ff0000;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    outline: 0;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+    padding: 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.list-unstyled {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    background-color: var(--btn-bg);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+#g-recaptcha-response {
+    display: block !important;
+    position: absolute;
+    margin: -78px 0 0 0 !important;
+    width: 302px !important;
+    height: 76px !important;
+    z-index: -999999;
+    opacity: 0;
+}
+
+
+.validate-response {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.validate-response .title {
+    margin: 0;
+}
+
+.validate-response.error .title {
+    color: var(--danger);
+}
+
+.validate-response.success .title {
+    color: var(--success);
+}
+
+.validate-response .error-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.validate-response .error-list .error-item {
+    margin-bottom: 5px;
+}

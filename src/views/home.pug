@@ -1,0 +1,22 @@
+extends ./layouts/default
+
+block metatags
+    script(src="https://www.google.com/recaptcha/api.js", async, defer)
+
+block body
+    .container 
+        form.form(action="/validate", method="post")
+            .row
+                .g-recaptcha(data-sitekey=g_sitekey)
+            .row
+                button.btn.btn-primary(type="submit") Submit
+
+block scripts
+    script.
+        window.onload = () => {
+            const $recaptcha = document.querySelector('#g-recaptcha-response');
+
+            if($recaptcha) {
+                $recaptcha.setAttribute('required', 'required');
+            }
+        };
